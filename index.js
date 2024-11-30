@@ -74,6 +74,7 @@ async function run() {
         app.post(`/api/users`, async (req, res) => {
             try {
                 const user = req.body;
+                console.log("(77 line) User info : ", user);
                 const query = { email: user.email };
                 const existingEmail = await usersCollection.findOne(query);
                 if (existingEmail) {
